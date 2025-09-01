@@ -202,10 +202,12 @@ button:focus-visible {
 
 input,
 textarea {
-  padding: 6px 12px;
+  padding: 10px 14px;
   border-radius: 4px;
   border: solid 1px #b6dab2;
-  box-shadow: inset 0px 0px transparent !important;
+  transition: box-shadow 0.1s linear;
+  box-shadow: 0px 0px 10px 0px transparent;
+  /* box-shadow: inset 0px 0px transparent !important; */
 }
 
 input:focus,
@@ -214,5 +216,5 @@ textarea:focus,
 textarea:focus-visible {
   outline: none;
   border: solid 1px #67bc5e;
-  box-shadow: 0px 0px 10px 0px #b6dab2;
+  box-shadow: 0px 0px 10px 0px #b3e6ae;
 }
