@@ -26,7 +26,7 @@ import {
 } from "../components/ui/dialog";
 
 import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
+// import { Label } from "../components/ui/label";
 
 const Navbar = () => {
   return (
@@ -41,7 +41,7 @@ const Navbar = () => {
               <DialogTrigger>
                 <div className="flex items-center gap-x-2 transition-colors hover:text-my-black">
                   <SlPlus className="text-2xl" />
-                  <span className="font-bold text-xl">Publish a ride</span>
+                  <span className="font-bold text-xl sm:flex hidden">Publish a ride</span>
                 </div>
               </DialogTrigger>
               <DialogContent>
