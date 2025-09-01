@@ -30,7 +30,7 @@ import { Input } from "../components/ui/input";
 
 const Navbar = () => {
   return (
-    <nav className="container absolute z-50 top-10 inset-x-0">
+    <nav className="sm:max-w-[95%] mx-auto absolute z-50 top-10 inset-x-0">
       <div className="px-2 bg-gradient-to-r from-my-black/85 from-5% via-my-green/75 via-20% to-white/50 to-90% h-16 rounded-xl">
         <div className="flex justify-between items-center h-full">
           <div className="h-full flex justify-center items-center p-3">
