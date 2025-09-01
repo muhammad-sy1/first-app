@@ -102,7 +102,7 @@ button:focus-visible {
   font-size: 20px;
   font-weight: 500;
   padding-inline: 12px;
-  padding-block: 10px;
+  padding-block: 4px;
   display: flex;
   justify-content: center;
   align-items: center;

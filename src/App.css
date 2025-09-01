@@ -1,3 +1,11 @@
 body {
   color: #233141;
 }
+
+.sec-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 200%;
+  font-weight: 700;
+}
