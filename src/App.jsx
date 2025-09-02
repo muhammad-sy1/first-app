@@ -8,6 +8,7 @@ import { LuCalendarDays } from "react-icons/lu";
 import { GiMoneyStack } from "react-icons/gi";
 import { AiTwotoneSecurityScan } from "react-icons/ai";
 import { ImPower } from "react-icons/im";
+
 import {
   Select,
   SelectContent,
@@ -17,11 +18,12 @@ import {
 } from "@/components/ui/select";
 import LatestTrips from "./my-components/LatestTrips";
 import ServicesCards from "./my-components/ServicesCards";
+import Footer from "./my-components/Footer";
 
 function App() {
   return (
     <>
-      <header className="relative">
+      <div className="relative">
         <Navbar />
         <div className="h-[600px]">
           <img
@@ -29,13 +31,13 @@ function App() {
             alt="banner"
             className="w-full h-full object-cover"
           />
-          <div className="w-full h-full bg-white/60 absolute inset-0">
+          <div className="w-full h-full bg-white/60 dark:bg-black/60  absolute inset-0">
             <div className="container lg:px-20 md:px-10 sm:px-5 px-2 h-full ">
               <div className="flex flex-col justify-center items-center gap-y-5 h-full text-center">
                 <div className="text-my-green font-bold sm:text-4xl text-2xl ">
                   Voyagez intelligemment et économisez davantage
                 </div>
-                <div className="to-my-black font-medium sm:text-2xl text-lg ">
+                <div className="text-my-black dark:text-my-white font-medium sm:text-2xl text-lg ">
                   Trouvez des chauffeurs de confiance et profitez de voyages
                   économiques.
                 </div>
@@ -142,7 +144,7 @@ function App() {
             </div>
           </div>
         </div>
-      </header>
+      </div>
       <main>
         <div className="container lg:px-20 md:px-10 sm:px-5 px-2 lg:pt-20 pt-40 pb-10">
           <div className="flex flex-col gap-y-10">
@@ -231,54 +233,7 @@ function App() {
           </form>
         </div>
       </main>
-      <footer>
-        <div className="bg-gray-800 text-white py-10">
-          <div className="container lg:px-20 md:px-10 sm:px-5 px-2">
-            <div className="grid grid-cols-6 gap-8 w-full">
-              <div className="lg:col-span-2 md:col-span-3 col-span-6">
-                <div className="flex flex-col gap-y-2">
-                  <img src="/logo.png" alt="logo" className="w-14" />
-                  <div className="font-semibold text-xl">
-                    Comment voyager avec IZIKEZ
-                  </div>
-                  <div className=" w-4/5">
-                    Covoiturage Conditions confortables pour les passagers
-                  </div>
-                </div>
-              </div>
-              <div className="lg:col-span-2 md:col-span-3 col-span-6">
-                <div className="flex flex-col gap-y-3">
-                  <div className="font-semibold text-lg">aide</div>
-                  <ul className="flex flex-col gap-y-2">
-                    <li>
-                      <a href="#">FAQ</a>
-                    </li>
-                    <li>
-                      <a href="#">Centre d'aide</a>
-                    </li>
-                    <li>
-                      <a href="#">politique de confidentialité</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="lg:col-span-2 md:col-span-3 col-span-6">
-                <div className="flex flex-col gap-y-3">
-                  <div className="font-semibold text-lg">Réservations</div>
-                  <ul className="flex flex-col gap-y-2">
-                    <li>
-                      <a href="#">Publier un voyage</a>
-                    </li>
-                    <li>
-                      <a href="#">Trouver un voyage</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
