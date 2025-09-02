@@ -30,12 +30,12 @@ function App() {
             className="w-full h-full object-cover"
           />
           <div className="w-full h-full bg-white/60 absolute inset-0">
-            <div className="container lg:px-20 md:px-10 sm:px-5 px-2 h-full ">  
+            <div className="container lg:px-20 md:px-10 sm:px-5 px-2 h-full ">
               <div className="flex flex-col justify-center items-center gap-y-5 h-full text-center">
-                <div className="text-my-green font-bold sm:text-4xl text-2xl">
+                <div className="text-my-green font-bold sm:text-4xl text-2xl ">
                   Voyagez intelligemment et économisez davantage
                 </div>
-                <div className="to-my-black font-medium sm:text-2xl text-lg">
+                <div className="to-my-black font-medium sm:text-2xl text-lg ">
                   Trouvez des chauffeurs de confiance et profitez de voyages
                   économiques.
                 </div>
@@ -224,7 +224,9 @@ function App() {
                 placeholder="Message "
                 className="resize-none h-32 w-full"
               ></textarea>
-              <button className="my-button border px-10! hover:bg-my-black hover:text-white transition-colors">soumettre</button>
+              <button className="my-button border px-10! hover:bg-my-black hover:text-white transition-colors">
+                soumettre
+              </button>
             </div>
           </form>
         </div>
