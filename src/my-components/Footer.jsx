@@ -34,10 +34,10 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="bg-gray-800 text-white py-10">
+      <div className="bg-background text-white py-10 border-t">
         <div className="container lg:px-20 md:px-10 sm:px-5 px-2">
           <div className="grid grid-cols-6 gap-8 w-full">
-            <div className="lg:col-span-2 md:col-span-3 col-span-6">
+            <div className="lg:col-span-2 md:col-span-3 col-span-6 flex">
               <div className="flex flex-col gap-y-2">
                 <img src="/logo.png" alt="logo" className="w-14" />
                 <div className="font-semibold text-xl">
@@ -48,7 +48,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:col-span-2 md:col-span-3 col-span-6">
+            <div className="lg:col-span-2 md:col-span-3 col-span-6 flex">
               <div className="flex flex-col gap-y-3">
                 <div className="font-semibold text-lg">aide</div>
                 <ul className="flex flex-col gap-y-2">
@@ -64,7 +64,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="lg:col-span-2 md:col-span-3 col-span-6">
+            <div className="lg:col-span-2 md:col-span-3 col-span-6 flex">
               <div className="flex flex-col items-start gap-y-3">
                 <div className="font-semibold text-lg">Réservations</div>
                 <ul className="flex flex-col gap-y-2">

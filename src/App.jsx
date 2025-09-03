@@ -44,14 +44,14 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="container lg:px-20 md:px-10 sm:px-5 px-2 relative -top-10">
-            <div className=" flex lg:flex-row flex-col justify-between items-center gap-y-5 bg-white rounded-xl shadow-xl px-5 py-3">
+          <div className="container xl:px-40 lg:px-20 md:px-10 sm:px-5 px-2 relative -top-10">
+            <div className=" flex lg:flex-row flex-col justify-between items-center gap-y-5 bg-background rounded-xl shadow-xl dark:shadow-my-black/20 px-5 py-3">
               <div className="flex lg:flex-row flex-col items-center gap-y-3 gap-x-10">
                 <div className="flex items-center gap-x-5">
                   <div className="flex items-center gap-x-2">
                     <FaRegCircle className="size-5 sm:flex hidden" />
                     <Select className="">
-                      <SelectTrigger className="text-black! border-none shadow-none focus-visible:ring-0 hover:bg-gray-100">
+                      <SelectTrigger className="hover:bg-gray-100">
                         <SelectValue placeholder="Plauen" />
                       </SelectTrigger>
                       <SelectContent>
@@ -61,13 +61,13 @@ function App() {
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="text-blue-800 text-xl hover:bg-gray-100 rounded-sm p-2">
+                  <div className="text-blue-800 text-xl hover:bg-foreground transition-colors rounded-sm p-2">
                     <GoArrowSwitch />
                   </div>
                   <div className="flex items-center gap-x-2">
                     <FaRegCircle className="size-5 sm:flex hidden" />
                     <Select className="">
-                      <SelectTrigger className="text-black! border-none shadow-none focus-visible:ring-0 hover:bg-gray-100">
+                      <SelectTrigger className="hover:bg-gray-100">
                         <SelectValue placeholder="Plauen" />
                       </SelectTrigger>
                       <SelectContent>
@@ -83,7 +83,7 @@ function App() {
                   <div className="flex items-center gap-x-2">
                     <LuCalendarDays className="size-5 sm:flex hidden" />
                     <Select className="">
-                      <SelectTrigger className="text-black! border-none shadow-none focus-visible:ring-0 hover:bg-gray-100">
+                      <SelectTrigger className="hover:bg-gray-100">
                         <SelectValue placeholder="Today" />
                       </SelectTrigger>
                       <SelectContent>
@@ -99,7 +99,7 @@ function App() {
                   <div className="flex items-center gap-x-2">
                     <FaRegUser className="size-5 sm:flex hidden" />
                     <Select className="">
-                      <SelectTrigger className="text-black! border-none shadow-none focus-visible:ring-0 hover:bg-gray-100">
+                      <SelectTrigger className="hover:bg-gray-100">
                         <SelectValue placeholder="2 Passagères" />
                       </SelectTrigger>
                       <SelectContent>
@@ -138,7 +138,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <button className="my-button hover:bg-cyan-800 bg-cyan-950 text-white transition-colors">
+              <button className="my-button hover:bg-my-black/90 bg-my-black text-white transition-colors">
                 Recherche
               </button>
             </div>
@@ -214,7 +214,7 @@ function App() {
         <div className="container lg:px-20 md:px-10 sm:px-5 px-2 py-10">
           <div className="sec-title py-10">Contactez-nous</div>
           <form action="" className="flex flex-col items-center gap-y-4 ">
-            <div className="flex flex-col gap-y-3 items-center md:w-96 w-full">
+            <div className="flex flex-col gap-y-3 items-center md:w-96 w-full border rounded px-4 py-3">
               <input
                 className="w-full"
                 type="text"
