@@ -34,24 +34,24 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="bg-background text-white py-10 border-t">
+      <div className="dark:bg-neutral-900 bg-neutral-800 text-my-white py-10 border-t">
         <div className="container lg:px-20 md:px-10 sm:px-5 px-2">
           <div className="grid grid-cols-6 gap-8 w-full">
-            <div className="lg:col-span-2 md:col-span-3 col-span-6 flex">
-              <div className="flex flex-col gap-y-2">
+            <div className="lg:col-span-2 md:col-span-3 col-span-6 ">
+              <div className="flex flex-col md:items-start items-center gap-y-2  text-center">
                 <img src="/logo.png" alt="logo" className="w-14" />
                 <div className="font-semibold text-xl">
                   Comment voyager avec IZIKEZ
                 </div>
-                <div className=" w-4/5">
+                <div className="md:w-4/5">
                   Covoiturage Conditions confortables pour les passagers
                 </div>
               </div>
             </div>
-            <div className="lg:col-span-2 md:col-span-3 col-span-6 flex">
-              <div className="flex flex-col gap-y-3">
+            <div className="lg:col-span-2 md:col-span-3 col-span-6 ">
+              <div className="flex flex-col md:items-start items-center gap-y-3">
                 <div className="font-semibold text-lg">aide</div>
-                <ul className="flex flex-col gap-y-2">
+                <ul className="flex flex-col md:items-start items-center gap-y-2">
                   <li>
                     <a href="#">FAQ</a>
                   </li>
@@ -64,10 +64,10 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="lg:col-span-2 md:col-span-3 col-span-6 flex">
-              <div className="flex flex-col items-start gap-y-3">
+            <div className="lg:col-span-2 md:col-span-3 col-span-6 ">
+              <div className="flex flex-col md:items-start items-center gap-y-3">
                 <div className="font-semibold text-lg">Réservations</div>
-                <ul className="flex flex-col gap-y-2">
+                <ul className="flex flex-col md:items-start items-center gap-y-2">
                   <li>
                     <a href="#">Publier un voyage</a>
                   </li>
@@ -75,13 +75,13 @@ const Footer = () => {
                     <a href="#">Trouver un voyage</a>
                   </li>
                 </ul>
-                <div className="flex gap-x-2 px-3 py-1 rounded-lg bg-gray-600">
+                <div className="flex gap-x-2 px-3 py-1 rounded-lg bg-neutral-700">
                   {buttons.map((btn) => (
                     <button
                       key={btn.id}
                       onClick={() => setTheme(btn.id)}
-                      className={`p-2 rounded-full hover:bg-gray-900 ${
-                        theme === btn.id ? "bg-gray-900" : " "
+                      className={`p-2 rounded-full hover:bg-my-green/70 transition-colors ${
+                        theme === btn.id ? "bg-my-green/70" : " "
                       }`}
                     >
                       {btn.icon}

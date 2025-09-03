@@ -93,9 +93,9 @@ const Navbar = () => {
                     </div>
                     <DialogFooter>
                       <DialogClose asChild>
-                        <Button variant="outline">Cancel</Button>
+                        <Button variant="light">Cancel</Button>
                       </DialogClose>
-                      <Button type="submit">Search</Button>
+                      <Button type="submit" variant="heavy">Search</Button>
                     </DialogFooter>
                   </DialogContent>
                 </form>

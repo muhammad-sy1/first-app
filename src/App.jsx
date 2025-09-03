@@ -19,6 +19,8 @@ import {
 import LatestTrips from "./my-components/LatestTrips";
 import ServicesCards from "./my-components/ServicesCards";
 import Footer from "./my-components/Footer";
+import { InputForm } from "./my-components/ContactForm";
+import { Button } from "./components/ui/button";
 
 function App() {
   return (
@@ -61,9 +63,9 @@ function App() {
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="text-blue-800 text-xl hover:bg-foreground transition-colors rounded-sm p-2">
+                  <Button variant="light" className="">
                     <GoArrowSwitch />
-                  </div>
+                  </Button>
                   <div className="flex items-center gap-x-2">
                     <FaRegCircle className="size-5 sm:flex hidden" />
                     <Select className="">
@@ -138,9 +140,9 @@ function App() {
                   </div>
                 </div>
               </div>
-              <button className="my-button hover:bg-my-black/90 bg-my-black text-white transition-colors">
+              <Button className="" variant="heavy">
                 Recherche
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -211,9 +213,9 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="container lg:px-20 md:px-10 sm:px-5 px-2 py-10">
+        <div className="container xl:px-52 lg:px-20 md:px-10 sm:px-5 px-2 py-10">
           <div className="sec-title py-10">Contactez-nous</div>
-          <form action="" className="flex flex-col items-center gap-y-4 ">
+          {/* <form action="" className="flex flex-col items-center gap-y-4 ">
             <div className="flex flex-col gap-y-3 items-center md:w-96 w-full border rounded px-4 py-3">
               <input
                 className="w-full"
@@ -230,7 +232,10 @@ function App() {
                 soumettre
               </button>
             </div>
-          </form>
+          </form> */}
+          <div className="flex rounded-xl justify-center items-center">
+            <InputForm />
+          </div>
         </div>
       </main>
       <Footer />
