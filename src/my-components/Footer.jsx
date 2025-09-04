@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { CiLight } from "react-icons/ci";
 import { BsMoonStars } from "react-icons/bs";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
-
+import LanguageSelect from "./LanguageSelect";
+import { useTranslation } from "react-i18next";
 const Footer = () => {
   const [theme, setTheme] = useState(localStorage.theme || "system");
 
@@ -31,50 +32,58 @@ const Footer = () => {
     { id: "dark", icon: <BsMoonStars /> },
     { id: "system", icon: <HiOutlineDesktopComputer /> },
   ];
+  const { t } = useTranslation();
 
   return (
     <footer>
       <div className="dark:bg-neutral-900 bg-neutral-800 text-my-white py-10 border-t">
         <div className="container lg:px-20 md:px-10 sm:px-5 px-2">
           <div className="grid grid-cols-6 gap-8 w-full">
-            <div className="lg:col-span-2 md:col-span-3 col-span-6 ">
-              <div className="flex flex-col md:items-start items-center gap-y-2  text-center">
+            {/* Logo + Title + Desc */}
+            <div className="lg:col-span-2 md:col-span-3 col-span-6">
+              <div className="flex flex-col md:items-start items-center gap-y-2 md:text-start text-center">
                 <img src="/logo.png" alt="logo" className="w-14" />
-                <div className="font-semibold text-xl">
-                  Comment voyager avec IZIKEZ
-                </div>
-                <div className="md:w-4/5">
-                  Covoiturage Conditions confortables pour les passagers
-                </div>
+                <div className="font-semibold text-xl">{t("footer.title")}</div>
+                <div className="md:w-4/5">{t("footer.description")}</div>
               </div>
             </div>
-            <div className="lg:col-span-2 md:col-span-3 col-span-6 ">
+
+            {/* Help */}
+            <div className="lg:col-span-2 md:col-span-3 col-span-6">
               <div className="flex flex-col md:items-start items-center gap-y-3">
-                <div className="font-semibold text-lg">aide</div>
+                <div className="font-semibold text-lg">
+                  {t("footer.help.title")}
+                </div>
                 <ul className="flex flex-col md:items-start items-center gap-y-2">
                   <li>
-                    <a href="#">FAQ</a>
+                    <a href="#">{t("footer.help.faq")}</a>
                   </li>
                   <li>
-                    <a href="#">Centre d'aide</a>
+                    <a href="#">{t("footer.help.center")}</a>
                   </li>
                   <li>
-                    <a href="#">politique de confidentialité</a>
+                    <a href="#">{t("footer.help.privacy")}</a>
                   </li>
                 </ul>
               </div>
             </div>
-            <div className="lg:col-span-2 md:col-span-3 col-span-6 ">
+
+            {/* Reservations + Theme + Lang */}
+            <div className="lg:col-span-2 md:col-span-3 col-span-6">
               <div className="flex flex-col md:items-start items-center gap-y-3">
-                <div className="font-semibold text-lg">Réservations</div>
+                <div className="font-semibold text-lg">
+                  {t("footer.reservations.title")}
+                </div>
                 <ul className="flex flex-col md:items-start items-center gap-y-2">
                   <li>
-                    <a href="#">Publier un voyage</a>
+                    <a href="#">{t("footer.reservations.publish")}</a>
                   </li>
                   <li>
-                    <a href="#">Trouver un voyage</a>
+                    <a href="#">{t("footer.reservations.find")}</a>
                   </li>
                 </ul>
+
+                {/* Theme Buttons */}
                 <div className="flex gap-x-2 px-3 py-1 rounded-lg bg-neutral-700">
                   {buttons.map((btn) => (
                     <button
@@ -88,6 +97,9 @@ const Footer = () => {
                     </button>
                   ))}
                 </div>
+
+                {/* Language Select */}
+                <LanguageSelect />
               </div>
             </div>
           </div>

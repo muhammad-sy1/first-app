@@ -197,7 +197,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 } */
 
-.my-button {
+/* .my-button {
   font-size: 20px;
   font-weight: 500;
   padding-inline: 12px;
@@ -206,7 +206,7 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-}
+} */
 
 input,
 textarea {

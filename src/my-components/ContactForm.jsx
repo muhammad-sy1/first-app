@@ -17,28 +17,30 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
-const FormSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  email: z.string().email({
-    message: "Invalid email address.",
-  }),
-  phone: z.string().regex(/^\d+$/, {
-    message: "Phone number must contain only digits.",
-  }),
-  message: z
-    .string()
-    .min(10, {
-      message: "Bio must be at least 10 characters.",
-    })
-    .max(160, {
-      message: "Bio must not be longer than 30 characters.",
-    }),
-});
+import { useTranslation } from "react-i18next";
 
 export function InputForm() {
+  const { t } = useTranslation();
+
+  const FormSchema = z.object({
+    username: z.string().min(2, {
+      message: t("contact.form.usernameError"),
+    }),
+    email: z.string().email({
+      message: t("contact.form.emailError"),
+    }),
+    phone: z.string().regex(/^\d+$/, {
+      message: t("contact.form.phoneError"),
+    }),
+    message: z
+      .string()
+      .min(10, {
+        message: t("contact.form.messageMinError"),
+      })
+      .max(160, {
+        message: t("contact.form.messageMaxError"),
+      }),
+  });
   const form = useForm({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -47,7 +49,7 @@ export function InputForm() {
   });
 
   function onSubmit(data) {
-    toast("You submitted the following values", {
+    toast(t("contact.form.toastTitle"), {
       description: (
         <pre className="mt-2 w-[320px] rounded-md bg-neutral-950 p-4">
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
@@ -65,7 +67,7 @@ export function InputForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input placeholder="Full Name" {...field} />
+                <Input placeholder={t("contact.form.name")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -77,7 +79,7 @@ export function InputForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input placeholder="Email" {...field} />
+                <Input placeholder={t("contact.form.email")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -89,7 +91,7 @@ export function InputForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input placeholder="Phone" {...field} />
+                <Input placeholder={t("contact.form.phone")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -102,7 +104,7 @@ export function InputForm() {
             <FormItem>
               <FormControl>
                 <Textarea
-                  placeholder="Tell us a little bit about yourself"
+                  placeholder={t("contact.form.message")}
                   className="resize-none"
                   {...field}
                 />
@@ -111,7 +113,9 @@ export function InputForm() {
             </FormItem>
           )}
         />
-        <Button className="px-10" variant="light" type="submit">Submit</Button>
+        <Button className="px-10" variant="light" type="submit">
+          {t("contact.form.submit")}
+        </Button>
       </form>
     </Form>
   );

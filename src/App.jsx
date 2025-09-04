@@ -21,8 +21,13 @@ import ServicesCards from "./my-components/ServicesCards";
 import Footer from "./my-components/Footer";
 import { InputForm } from "./my-components/ContactForm";
 import { Button } from "./components/ui/button";
+import { useTranslation } from "react-i18next";
+import TripsSection from "./my-components/TripsSection";
+import ContactSection from "./my-components/ContactSection";
 
 function App() {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="relative">
@@ -33,116 +38,103 @@ function App() {
             alt="banner"
             className="w-full h-full object-cover"
           />
-          <div className="w-full h-full bg-white/60 dark:bg-black/60  absolute inset-0">
-            <div className="container lg:px-20 md:px-10 sm:px-5 px-2 h-full ">
+          <div className="w-full h-full bg-white/60 dark:bg-black/60 absolute inset-0">
+            <div className="container lg:px-20 md:px-10 sm:px-5 px-2 h-full">
               <div className="flex flex-col justify-center items-center gap-y-5 h-full text-center">
-                <div className="text-my-green font-bold sm:text-4xl text-2xl ">
-                  Voyagez intelligemment et économisez davantage
+                <div className="text-my-green font-bold sm:text-4xl text-2xl">
+                  {t("banner.title")}
                 </div>
-                <div className="text-my-black dark:text-my-white font-medium sm:text-2xl text-lg ">
-                  Trouvez des chauffeurs de confiance et profitez de voyages
-                  économiques.
+                <div className="text-my-black dark:text-my-white font-medium sm:text-2xl text-lg">
+                  {t("banner.subtitle")}
                 </div>
               </div>
             </div>
           </div>
+
           <div className="container xl:px-40 lg:px-20 md:px-10 sm:px-5 px-2 relative -top-10">
-            <div className=" flex lg:flex-row flex-col justify-between items-center gap-y-5 bg-background rounded-xl shadow-xl dark:shadow-my-black/20 px-5 py-3">
+            <div className="flex lg:flex-row flex-col justify-between items-center gap-y-5 bg-background rounded-xl shadow-xl dark:shadow-my-black/20 px-5 py-3">
               <div className="flex lg:flex-row flex-col items-center gap-y-3 gap-x-10">
                 <div className="flex items-center gap-x-5">
+                  {/* From */}
                   <div className="flex items-center gap-x-2">
                     <FaRegCircle className="size-5 sm:flex hidden" />
-                    <Select className="">
+                    <Select>
                       <SelectTrigger className="hover:bg-gray-100">
-                        <SelectValue placeholder="Plauen" />
+                        <SelectValue placeholder={t("banner.from")} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="light">Light</SelectItem>
-                        <SelectItem value="dark">Dark</SelectItem>
-                        <SelectItem value="system">System</SelectItem>
+                        <SelectItem value="city1">City 1</SelectItem>
+                        <SelectItem value="city2">City 2</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
-                  <Button variant="light" className="">
+
+                  <Button variant="light">
                     <GoArrowSwitch />
                   </Button>
+
+                  {/* To */}
                   <div className="flex items-center gap-x-2">
                     <FaRegCircle className="size-5 sm:flex hidden" />
-                    <Select className="">
+                    <Select>
                       <SelectTrigger className="hover:bg-gray-100">
-                        <SelectValue placeholder="Plauen" />
+                        <SelectValue placeholder={t("banner.to")} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="light">Light</SelectItem>
-                        <SelectItem value="dark">Dark</SelectItem>
-                        <SelectItem value="system">System</SelectItem>
+                        <SelectItem value="city1">City 1</SelectItem>
+                        <SelectItem value="city2">City 2</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                 </div>
+
+                {/* Date & Passengers */}
                 <div className="flex items-center gap-x-5">
                   <div className="lg:flex hidden">|</div>
                   <div className="flex items-center gap-x-2">
                     <LuCalendarDays className="size-5 sm:flex hidden" />
-                    <Select className="">
+                    <Select>
                       <SelectTrigger className="hover:bg-gray-100">
-                        <SelectValue placeholder="Today" />
+                        <SelectValue placeholder={t("banner.today")} />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="Today">Today</SelectItem>
-                        <SelectItem value="Tomorrow">Tomorrow</SelectItem>
-                        <SelectItem value="After Tomorrow">
-                          After Tomorrow
+                        <SelectItem value="today">
+                          {t("banner.today")}
+                        </SelectItem>
+                        <SelectItem value="tomorrow">
+                          {t("banner.tomorrow")}
+                        </SelectItem>
+                        <SelectItem value="afterTomorrow">
+                          {t("banner.afterTomorrow")}
                         </SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
-                  <div className="">|</div>
+
+                  <div>|</div>
+
                   <div className="flex items-center gap-x-2">
                     <FaRegUser className="size-5 sm:flex hidden" />
-                    <Select className="">
+                    <Select>
                       <SelectTrigger className="hover:bg-gray-100">
-                        <SelectValue placeholder="2 Passagères" />
+                        <SelectValue
+                          placeholder={t("banner.passengers", { count: 2 })}
+                        />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="1 Passagères">
-                          1 Passagères
-                        </SelectItem>
-                        <SelectItem value="2 Passagères">
-                          2 Passagères
-                        </SelectItem>
-                        <SelectItem value="3 Passagères">
-                          3 Passagères
-                        </SelectItem>
-                        <SelectItem value="4 Passagères">
-                          4 Passagères
-                        </SelectItem>
-                        <SelectItem value="5 Passagères">
-                          5 Passagères
-                        </SelectItem>
-                        <SelectItem value="6 Passagères">
-                          6 Passagères
-                        </SelectItem>
-                        <SelectItem value="7 Passagères">
-                          7 Passagères
-                        </SelectItem>
-                        <SelectItem value="8 Passagères">
-                          8 Passagères
-                        </SelectItem>
-                        <SelectItem value="9 Passagères">
-                          9 Passagères
-                        </SelectItem>
-                        <SelectItem value="10 Passagères">
-                          10 Passagères
-                        </SelectItem>
+                        {[...Array(10)].map((_, i) => (
+                          <SelectItem key={i} value={`${i + 1}`}>
+                            {t("banner.passengers", { count: i + 1 })}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>
                 </div>
               </div>
-              <Button className="" variant="heavy">
-                Recherche
-              </Button>
+
+              {/* Search button */}
+              <Button variant="heavy">{t("banner.search")}</Button>
             </div>
           </div>
         </div>
@@ -150,93 +142,34 @@ function App() {
       <main>
         <div className="container lg:px-20 md:px-10 sm:px-5 px-2 lg:pt-20 pt-40 pb-10">
           <div className="flex flex-col gap-y-10">
-            <div className="sec-title">Our Services</div>
+            <div className="sec-title">{t("services.title")}</div>
             <div className="grid grid-cols-6 gap-10 gap-y-10">
               <ServicesCards
                 serviceInfo={{
                   serviceIcon: <GiMoneyStack />,
-                  serviceTitle: "Choisissez parmi des voyages à petit prix",
-                  serviceBody:
-                    "Nous vérifions les avis et les profils afin que vous sachiez avec qui vous voyagez et que vous réserviez facilement votre voyage sur notre site.",
+                  serviceTitle: t("services.cheapTrips"),
+                  serviceBody: t("services.cheapTripsBody"),
                 }}
               />
               <ServicesCards
                 serviceInfo={{
                   serviceIcon: <AiTwotoneSecurityScan />,
-                  serviceTitle:
-                    "Faites confiance à la personne avec qui vous voyagez",
-                  serviceBody:
-                    "Nous vérifions les avis et les profils afin que vous sachiez avec qui vous voyagez et que vous réserviez facilement votre voyage sur notre site.",
+                  serviceTitle: t("services.trustPeople"),
+                  serviceBody: t("services.trustPeopleBody"),
                 }}
               />
               <ServicesCards
                 serviceInfo={{
                   serviceIcon: <ImPower />,
-                  serviceTitle: "Réservez rapidement et facilement",
-                  serviceBody:
-                    "Nous vérifions les avis et les profils afin que vous sachiez avec qui vous voyagez et que vous réserviez facilement votre voyage sur notre site.",
+                  serviceTitle: t("services.bookFast"),
+                  serviceBody: t("services.bookFastBody"),
                 }}
               />
             </div>
           </div>
         </div>
-        <div className="sec-title py-10">Derniers voyages</div>
-        <div className="bg-gradient-to-r from-my-black to-my-green py-10">
-          <div className="container lg:px-20 md:px-10 sm:px-5 px-2">
-            <div className="flex flex-col gap-y-10">
-              <div className="grid grid-cols-6 gap-5 ">
-                <LatestTrips
-                  cardInfo={{
-                    title: "Munich to Plauen ",
-                    time: "4",
-                    quantity: "Un siège",
-                    price: "10",
-                  }}
-                />
-                <LatestTrips
-                  cardInfo={{
-                    title: "Munich to Plauen ",
-                    time: "4",
-                    quantity: "Un siège",
-                    price: "10",
-                  }}
-                />
-                <LatestTrips
-                  cardInfo={{
-                    title: "Munich to Plauen ",
-                    time: "4",
-                    quantity: "Un siège",
-                    price: "10",
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container xl:px-52 lg:px-20 md:px-10 sm:px-5 px-2 py-10">
-          <div className="sec-title py-10">Contactez-nous</div>
-          {/* <form action="" className="flex flex-col items-center gap-y-4 ">
-            <div className="flex flex-col gap-y-3 items-center md:w-96 w-full border rounded px-4 py-3">
-              <input
-                className="w-full"
-                type="text"
-                placeholder="Nom et prénom"
-              />
-              <input className="w-full" type="email" placeholder="e-mail" />
-              <input className="w-full" type="tel" placeholder="Téléphone" />
-              <textarea
-                placeholder="Message "
-                className="resize-none h-32 w-full"
-              ></textarea>
-              <button className="my-button border px-10! hover:bg-my-black hover:text-white transition-colors">
-                soumettre
-              </button>
-            </div>
-          </form> */}
-          <div className="flex rounded-xl justify-center items-center">
-            <InputForm />
-          </div>
-        </div>
+        <TripsSection />
+        <ContactSection />
       </main>
       <Footer />
     </>
