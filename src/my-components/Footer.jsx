@@ -6,8 +6,13 @@ import { BsMoonStars } from "react-icons/bs";
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import LanguageSelect from "./LanguageSelect";
 import { useTranslation } from "react-i18next";
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import getLatestTripsAndSocialLinks from "../services/latestTrips-socialLinks";
+
 const Footer = () => {
+  const { t } = useTranslation();
   const [theme, setTheme] = useState(localStorage.theme || "system");
+  const [socialInfo, setSocialInfo] = useState({});
 
   useEffect(() => {
     if (theme === "dark") {
@@ -32,7 +37,21 @@ const Footer = () => {
     { id: "dark", icon: <BsMoonStars /> },
     { id: "system", icon: <HiOutlineDesktopComputer /> },
   ];
-  const { t } = useTranslation();
+
+  const icons = {
+    facebook: <FaFacebook />,
+    instagram: <FaInstagram />,
+    youtube: <FaYoutube />,
+    linkedin: <FaLinkedin />,
+  };
+
+  useEffect(() => {
+    (async () => {
+      const data = await getLatestTripsAndSocialLinks();
+      setSocialInfo(data?.data.info.social || {});
+      // console.log(data?.data.info);
+    })();
+  }, []);
 
   return (
     <footer>
@@ -100,6 +119,25 @@ const Footer = () => {
 
                 {/* Language Select */}
                 <LanguageSelect />
+              </div>
+            </div>
+            <div className="col-span-6">
+              <div className="flex flex-col gap-y-5 justify-center items-center">
+                <div className="flex items-center gap-x-5">
+                  {Object.entries(socialInfo).map(([key, url], index) => (
+                    <div className="contents" key={index}>
+                      <a
+                        className="text-3xl"
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {icons[key]}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex text-center">{t("footer.rights")}</div>
               </div>
             </div>
           </div>

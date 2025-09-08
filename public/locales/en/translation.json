@@ -36,43 +36,25 @@
   },
   "trips": {
     "latest": "Latest Trips",
-    "seat": "{{count}} seat",
-    "seat_plural": "{{count}} seats",
-    "bookTrip": "Book this trip",
-    "trip1": {
-      "title": "Munich to Plauen",
-      "time": "4 hours",
-      "quantity": "{{count}} seat",
-      "price": "10 €"
-    },
-    "trip2": {
-      "title": "Berlin to Hamburg",
-      "time": "3 hours",
-      "quantity": "{{count}} seats",
-      "price": "15 €"
-    },
-    "trip3": {
-      "title": "Paris to Lyon",
-      "time": "2 hours",
-      "quantity": "{{count}} seats",
-      "price": "20 €"
-    }
+    "price": "Price",
+    "quantity": "Seats available",
+    "bookTrip": "Book this trip"
   },
   "contact": {
     "title": "Contact Us",
     "form": {
-    "name": "Full Name",
-    "email": "Email",
-    "phone": "Phone",
-    "message": "Tell us a little bit about yourself",
-    "submit": "Submit",
-    "toastTitle": "You submitted the following values",
-    "usernameError": "Username must be at least 2 characters.",
-    "emailError": "Invalid email address.",
-    "phoneError": "Phone number must contain only digits.",
-    "messageMinError": "Message must be at least 10 characters.",
-    "messageMaxError": "Message must not be longer than 160 characters."
-  }
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Tell us a little bit about yourself",
+      "submit": "Submit",
+      "toastTitle": "You submitted the following values",
+      "usernameError": "Username must be at least 2 characters.",
+      "emailError": "Invalid email address.",
+      "phoneError": "Phone number must contain only digits.",
+      "messageMinError": "Message must be at least 10 characters.",
+      "messageMaxError": "Message must not be longer than 160 characters."
+    }
   },
   "footer": {
     "title": "How to travel with IZIKEZ",
@@ -87,6 +69,7 @@
       "title": "Reservations",
       "publish": "Publish a trip",
       "find": "Find a trip"
-    }
+    },
+    "rights": "© 2025 IZIKIZ all rights reserved - Developed by Webchallenge"
   }
 }

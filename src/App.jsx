@@ -16,10 +16,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import LatestTrips from "./my-components/LatestTrips";
 import ServicesCards from "./my-components/ServicesCards";
 import Footer from "./my-components/Footer";
-import { InputForm } from "./my-components/ContactForm";
 import { Button } from "./components/ui/button";
 import { useTranslation } from "react-i18next";
 import TripsSection from "./my-components/TripsSection";

@@ -1,8 +1,21 @@
 import { useTranslation } from "react-i18next";
 import LatestTrips from "./LatestTrips";
+import { useEffect, useState } from "react";
+import getLatestTripsAndSocialLinks from "../services/latestTrips-socialLinks";
+import dayjs from "../utils/dayjsConfig";
 
 export default function TripsSection() {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
+  const lang = i18n.language; // "ar" أو "en"
+  const [tripsInfo, setTripsInfo] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const data = await getLatestTripsAndSocialLinks();
+      setTripsInfo(data.data.trips || []);
+      console.log(data.data.trips);
+    })();
+  }, []);
 
   return (
     <>
@@ -11,30 +24,20 @@ export default function TripsSection() {
         <div className="container lg:px-20 md:px-10 sm:px-5 px-2">
           <div className="flex flex-col gap-y-10">
             <div className="grid grid-cols-6 gap-5 ">
-              <LatestTrips
-                cardInfo={{
-                  title: t("trips.trip1.title"),
-                  time: t("trips.trip1.time"),
-                  quantity: t("trips.trip1.quantity", { count: 1 }),
-                  price: t("trips.trip1.price"),
-                }}
-              />
-              <LatestTrips
-                cardInfo={{
-                  title: t("trips.trip2.title"),
-                  time: t("trips.trip2.time"),
-                  quantity: t("trips.trip2.quantity", { count: 2 }),
-                  price: t("trips.trip2.price"),
-                }}
-              />
-              <LatestTrips
-                cardInfo={{
-                  title: t("trips.trip3.title"),
-                  time: t("trips.trip3.time"),
-                  quantity: t("trips.trip3.quantity", { count: 3 }),
-                  price: t("trips.trip3.price"),
-                }}
-              />
+              {tripsInfo.map((item) => (
+                <div className="contents" key={item.id}>
+                  <LatestTrips
+                    cardInfo={{
+                      title: `${item.from_location_text} to ${item.to_location_text}`,
+                      date: `${dayjs(item.travel_datetime)
+                        .locale(lang)
+                        .toNow()}`,
+                      quantity: `${item.seats} ${t("trips.quantity")}`,
+                      price: `${t("trips.price")} ${item.price} $`,
+                    }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>

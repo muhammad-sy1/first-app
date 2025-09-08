@@ -36,27 +36,9 @@
   },
   "trips": {
     "latest": "أحدث الرحلات",
-    "seat": "{{count}} مقعد",
-    "seat_plural": "{{count}} مقاعد",
-    "bookTrip": "احجز هذه الرحلة",
-    "trip1": {
-      "title": "ميونيخ إلى بلاون",
-      "time": "٤ ساعات",
-      "quantity": "{{count}} مقعد",
-      "price": "١٠"
-    },
-    "trip2": {
-      "title": "برلين إلى هامبورغ",
-      "time": "٣ ساعات",
-      "quantity": "{{count}} مقاعد",
-      "price": "١٥"
-    },
-    "trip3": {
-      "title": "باريس إلى ليون",
-      "time": "ساعتان",
-      "quantity": "{{count}} مقاعد",
-      "price": "٢٠"
-    }
+    "price": "السعر",
+    "quantity": "مقعد متاح",
+    "bookTrip": "احجز هذه الرحلة"
   },
   "contact": {
     "title": "تواصل معنا",
@@ -87,6 +69,7 @@
       "title": "الحجوزات",
       "publish": "نشر رحلة",
       "find": "البحث عن رحلة"
-    }
+    },
+    "rights": "© 2025 IZIKIZ جميع الحقوق محفوظة - تم التطوير بواسطة Webchallenge"
   }
 }
