@@ -208,15 +208,15 @@ button:focus-visible {
   border-radius: 4px;
 } */
 
-input,
+/* input,
 textarea {
-  /* padding: 10px 14px; */
-  /* border-radius: 4px; */
-  /* border: solid 1px #b6dab2; */
-  /* transition: box-shadow 0.1s linear; */
-  /* box-shadow: 0px 0px 10px 0px transparent; */
-  /* box-shadow: inset 0px 0px transparent !important; */
-}
+  padding: 10px 14px;
+  border-radius: 4px;
+  border: solid 1px #b6dab2;
+  transition: box-shadow 0.1s linear;
+  box-shadow: 0px 0px 10px 0px transparent;
+  box-shadow: inset 0px 0px transparent !important;
+} */
 
 /* input:focus,
 input:focus-visible,

@@ -9,3 +9,19 @@
   font-size: 200%;
   font-weight: 700;
 }
+
+.PhoneInputInput {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  box-shadow: 0px 0px 9px 0px #6fcd6585;
+}
+
+/* .PhoneInput:focus-visible{
+} */
+
+.PhoneInputInput:focus,
+.PhoneInputInput:focus-visible {
+  border: 1px solid #398f30;
+  outline: none;
+}

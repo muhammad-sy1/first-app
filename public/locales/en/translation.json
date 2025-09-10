@@ -43,17 +43,27 @@
   "contact": {
     "title": "Contact Us",
     "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "title": "Enter Your Details",
       "name": "Full Name",
       "email": "Email",
       "phone": "Phone",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
       "message": "Tell us a little bit about yourself",
       "submit": "Submit",
+      "create": "Create Account",
+      "forgetPassword": "Forget Password?",
       "toastTitle": "You submitted the following values",
       "usernameError": "Username must be at least 2 characters.",
       "emailError": "Invalid email address.",
       "phoneError": "Phone number must contain only digits.",
       "messageMinError": "Message must be at least 10 characters.",
-      "messageMaxError": "Message must not be longer than 160 characters."
+      "messageMaxError": "Message must not be longer than 160 characters.",
+      "passwordUpperError": "Password must contain at least one uppercase letter.",
+      "passwordNumberError": "Password must contain at least one number.",
+      "passwordSpecialError": "Password must contain at least one special character."
     }
   },
   "footer": {
