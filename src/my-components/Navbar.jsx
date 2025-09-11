@@ -26,6 +26,7 @@ import { SlPlus } from "react-icons/sl";
 import { IoIosSearch } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { NavLink } from "react-router";
 
 export default function Header() {
   const { t } = useTranslation();
@@ -117,7 +118,9 @@ export default function Header() {
                   <DropdownMenuItem>{t("header.billing")}</DropdownMenuItem>
                   <DropdownMenuItem>{t("header.team")}</DropdownMenuItem>
                   <DropdownMenuItem>
-                    {t("header.subscription")}
+                    <NavLink className="flex w-full" to="/login">
+                      Login
+                    </NavLink>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>

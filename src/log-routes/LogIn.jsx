@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { getCookie } from "@/utils/cookies";
 
 import { Button } from "@/components/ui/button";
 import { IoEye, IoEyeOff } from "react-icons/io5";
@@ -16,42 +17,45 @@ import {
 import { Input } from "@/components/ui/input";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router";
-
+import useLoginStore from "../services/authService";
 const LogIn = () => {
   const { t } = useTranslation();
   const [show, setShow] = useState(false);
-
+  const token = getCookie("token");
+  // const username = getCookie("username");
   const FormSchema = z.object({
-    // username: z.string().min(2, {
-    //   message: t("contact.form.usernameError"),
-    // }),
     email: z.string().email({
       message: t("contact.form.emailError"),
-    }),
-    phone: z.string().regex(/^\d+$/, {
-      message: t("contact.form.phoneError"),
     }),
     password: z
       .string()
       .min(8, {
         message: t("contact.form.messageMinError"),
       })
-      .regex(/[A-Z]/, {
-        message: t("contact.form.messageMaxError"), 
-      })
       .regex(/[0-9]/, {
         message: t("contact.form.passwordNumberError"),
-      })
-      .regex(/[^A-Za-z0-9]/, {
-        message: t("contact.form.passwordSpecialError"), 
       }),
   });
+
   const form = useForm({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      username: "",
+      email: "",
+      password: "",
     },
   });
+
+  const { loginUser, loading, error } = useLoginStore();
+
+  const onSubmit = async (formData) => {
+    const body = {
+      ...formData,
+      fcm_token: "random-token",
+    };
+
+    await loginUser(body);
+    console.log(body);
+  };
 
   return (
     <>
@@ -64,7 +68,10 @@ const LogIn = () => {
         </div>
         <div className="w-full">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit()} className="xl:w-3/4 lg:w-4/5 w-full space-y-6">
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="xl:w-3/4 lg:w-4/5 w-full space-y-6"
+            >
               <FormField
                 control={form.control}
                 name="email"
@@ -106,7 +113,9 @@ const LogIn = () => {
               />
               <Button className="py-5 w-full" variant="heavy" type="submit">
                 {t("contact.form.submit")}
+                {loading && <p>Loading...</p>}
               </Button>
+              {error && <p>{error}</p>}
               <div className="flex justify-between items-center">
                 <NavLink className="" to="../create-account">
                   {t("contact.form.create")}
@@ -115,6 +124,7 @@ const LogIn = () => {
                   {t("contact.form.forgetPassword")}
                 </NavLink>
               </div>
+              {token}
             </form>
           </Form>
         </div>
